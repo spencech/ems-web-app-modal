@@ -68,6 +68,3 @@ Component Usage:
 			<button class="button" (click)="closeModal()">Close</button>
 		</div>
 	</ng-template>
-
-
-Note that the loader type defaults to Loader.Spinner. If you want to use the ellipsis loader, you must call the load method at least once (as pictured above.) Subsequent show/hide calls will preserve this configuration
