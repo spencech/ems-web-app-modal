@@ -17,5 +17,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/spencech/ems-web-app-modal.git"
+  },
+  "scripts": {
+    "publish": "git add -A . && git commit -m 'prepublish npm package' && npm version patch && ng build modal && cd dist && npm publish"
   }
 }
