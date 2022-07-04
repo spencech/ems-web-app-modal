@@ -1,0 +1,21 @@
+{
+  "name": "ems-web-app-modal",
+  "version": "0.0.1",
+  "author": "Chris Spence",
+  "peerDependencies": {
+    "@angular/common": "^13.2.0",
+    "@angular/core": "^13.2.0",
+    "ems-web-app-utils": "^0.0.11",
+    "jquery": "^3.6.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spencech/ems-web-app-modal.git"
+  }
+}
