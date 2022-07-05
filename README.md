@@ -4,9 +4,9 @@ The Modal Angular.io module is authored for use within web applications develope
 
 The embedded component and service expose an interface for rendering a modal overlay and content window. This component also implements keybord trapping and focus management to meet accessibility requirements.
 
-Note that this component is typically used as a singleton, defined once and rendered at the top-most component level.
+**Note that this component is typically used as a singleton**, defined once and rendered at the top-most component level.
 
-Also Note that styling options are limited, and will need to be customized in your CSS files to meet the needs of your implementation.
+Also note that styling options are limited, and will need to be customized in your CSS files to meet the needs of your implementation.
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 
@@ -34,7 +34,7 @@ Module Implementation
 	})
 	export class AppModule { }
 
-Example placement of <modal/> node in DOM:
+Example placement of &lt;modal/&gt; node in DOM:
 
 	<body app>
 		<some-app-component class="modal-blur"></some-app-component>
