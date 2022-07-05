@@ -65,8 +65,10 @@ Example request to render modal from another component:
 		constructor(private modal: ModalService) {}
 		showModal() {
 			const data = new ModalData();
+			data.preventClickToDismiss = true; //defaults to false -- controls whether user can click outside of the modal context box to dismiss the view
+			data.initialized = (element: HTMLElement, data: ModalData) => console.log(element); //optional callback after modal has been rendered
 			data.template = this.modalTemplate;
-			data.cancel = this.closeModal;
+			data.cancel = this.closeModal; //required invoked if user types ESC key or clicks outside content box to hide modal
 			this.modal.setCurrentModal(data);
 		}
 		closeModal = () => {
@@ -90,6 +92,7 @@ Example template for the calling component:
 		</div>
 	</ng-template>
 
+Note that modals can be "stacked"... if you call setCurrentModal multiple times. Each subsequent modal closure removes the most recently added modal from the stack.
 
 ## Code scaffolding
 
