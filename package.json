@@ -1,6 +1,6 @@
 {
   "name": "ems-web-app-modal",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "author": "Chris Spence",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
