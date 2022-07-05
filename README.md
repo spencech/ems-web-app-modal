@@ -4,7 +4,9 @@ The Modal Angular.io module is authored for use within web applications develope
 
 The embedded component and service expose an interface for rendering a modal overlay and content window. This component also implements keybord trapping and focus management to meet accessibility requirements.
 
-Note that styling options are limited, and will need to be customized in your CSS files to meet the needs of your implementation.
+Note that this component is typically used as a singleton, defined once and rendered at the top-most component level.
+
+Also Note that styling options are limited, and will need to be customized in your CSS files to meet the needs of your implementation.
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 
@@ -32,17 +34,32 @@ Module Implementation
 	})
 	export class AppModule { }
 
+Example placement of <modal/> node in DOM:
 
-Component usage:
+	<body app>
+		<some-app-component class="modal-blur"></some-app-component>
+		<some-other-component class="modal-blur"></some-other-component>
+		<modal [transition-speed]="250" [z-index]="99" background="rgba(255,255,0,0.25)"></modal>
+	</body>
+
+Template attributes with defaults:
+
+	"transition-speed": number = 1000; // speed of fade in / fade out
+	"background": string = "rgba(255,255,255,0.25)"; //modal background
+	"z-index": number = 10000;
+
+Note the usage of the "modal-blur" class above. The Modal component adds a blur filter to any elements with this class. 
+
+Example request to render modal from another component:
 	
-	import { Component, AfterViewInit, ViewChild, TemplateRef  } from '@angular/core';
+	import { Component, ViewChild, TemplateRef  } from '@angular/core';
 	import { ModalData, ModalService } from "ems-web-app-modal";
 	@Component({
-	  selector: 'app-root',
+	  selector: 'some-app-component',
 	  templateUrl: './app.component.html',
 	  styleUrls: ['./app.component.less']
 	})
-	export class AppComponent implements AfterViewInit {
+	export class SomeAppComponent {
 		@ViewChild("modalTest") modalTemplate!: TemplateRef<any>;
 		public title: string = "modal title";
 		constructor(private modal: ModalService) {}
@@ -58,28 +75,20 @@ Component usage:
 	}
 
 
-Example modal configuration in template:
-
-	<modal 	[transition-speed]="250" [z-index]="99" background="rgba(255,255,0,0.25)"></modal>
-	
+Example template for the calling component:
 
 	<div class="control-buttons">
 		<button (click)="showModal()" [ngStyle]="{'z-index': 10000, position: 'relative'}">Show Modal</button>
 	</div>
-	<div class="content-panel modal-blur">
+	<div class="content-panel">
 		<p>Curabitur blandit tempus porttitor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 	</div>
-
-	<modal 	[transition-speed]="250" [z-index]="99" background="rgba(255,255,0,0.25)"></modal>
-
 	<ng-template #modalTest>
 		<p>#1: Hello from the modal template {{ title }}</p>
 		<div class="buttons">
 			<button class="button" (click)="closeModal()">Close</button>
 		</div>
 	</ng-template>
-
-
 
 
 ## Code scaffolding
