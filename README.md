@@ -1,4 +1,4 @@
-# Modal
+# EMS Web Application Components: Modal
 
 The Modal Angular.io module is authored for use within web applications developed by [Educational Media Solutions](https://educationalmediasolutions.com).
 
