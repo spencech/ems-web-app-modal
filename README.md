@@ -1,6 +1,6 @@
 # EMS Web Application Components: Modal
 
-The Modal Angular.io module is authored for use within web applications developed by [Educational Media Solutions](https://educationalmediasolutions.com).
+The Modal Angular.io module is authored for use within [web applications](https://github.com/spencech/ems-web-app-template) developed by [Educational Media Solutions](https://educationalmediasolutions.com).
 
 The embedded component and service expose an interface for rendering a modal overlay and content window. This component also implements keybord trapping and focus management to meet accessibility requirements.
 
