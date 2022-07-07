@@ -1,6 +1,6 @@
 {
   "name": "ems-web-app-modal",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "author": "Chris Spence (https://educationalmediasolutions.com)",
   "description": "The embedded component and service expose an interface for rendering a modal overlay and content window. This component also implements keybord trapping and focus management to meet accessibility requirements.",
   "peerDependencies": {
@@ -11,8 +11,7 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/spencech/ems-web-app-modal.git"
