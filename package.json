@@ -1,6 +1,6 @@
 {
   "name": "ems-web-app-modal",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "author": "Chris Spence (https://educationalmediasolutions.com)",
   "description": "The embedded component and service expose an interface for rendering a modal overlay and content window. This component also implements keybord trapping and focus management to meet accessibility requirements.",
   "funding": "https://paypal.me/spencech",
