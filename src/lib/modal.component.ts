@@ -18,6 +18,7 @@ export class ModalComponent implements OnInit, AfterViewInit  {
   @Input("transition-speed") speed: number = 250;
   @Input("background") background: string = "rgba(255,255,255,0.25)";
   @Input("z-index") zIndex: number = 9000;
+  @Input("focus-target") focusTarget: string = "#modal-info";
 
   private static INTERACTIVES: string = `a, button, input, select, textarea, [role="button"]`;
 
@@ -98,7 +99,7 @@ export class ModalComponent implements OnInit, AfterViewInit  {
 
 
     this.timeout = window.setTimeout(() => {
-      const info = this.element.nativeElement.querySelector("#modal-info");
+      const info = this.element.nativeElement.querySelector(this.focusTarget);
       info.focus();
       this.transparent = false;
       this.onInitialize(); 
