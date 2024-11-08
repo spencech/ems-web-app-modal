@@ -1,4 +1,4 @@
-<div class="modal-content" *ngIf="data">
+<div [id]="data.id" class="modal-content" *ngIf="data">
 	<p id="modal-info" tabindex="0" class="accessible">You are now at the top of a modal window.</p>
 	<ng-container *ngTemplateOutlet="data.template"></ng-container>
 </div>
