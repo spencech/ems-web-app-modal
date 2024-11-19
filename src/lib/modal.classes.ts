@@ -7,6 +7,7 @@ export class ModalData  {
 	private _initialized?: ((element: HTMLElement, data: ModalData) => void) | undefined;
 	private _cancel!: () => void ; 
 	private _template!: TemplateRef<any>;
+	private _classes: string[] = [];
 	
 	constructor() {};
 
@@ -49,5 +50,14 @@ export class ModalData  {
 	get template(): TemplateRef<any> {
 		return this._template;
 	}
+
+	get classes(): string[] {
+		return this._classes;
+	}
+
+	set classes(value: string[]){
+		this._classes = value;
+	}
+
 
 }
