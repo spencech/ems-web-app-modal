@@ -82,7 +82,7 @@ export class ModalComponent implements OnInit, AfterViewInit  {
     const siblings = children.filter((child: HTMLElement) => child !== this.element.nativeElement);
     const disabled = Array.prototype.slice.call(document.querySelectorAll(".tab-disabled"));
     
-    siblings.forEach((sibling: HTMLElement) => sibling.removeAttribute("aria-hidden"));
+    //siblings.forEach((sibling: HTMLElement) => sibling.removeAttribute("aria-hidden"));
 
     disabled.forEach((element: HTMLElement) => {
       element.tabIndex = 0;
