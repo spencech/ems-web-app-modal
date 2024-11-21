@@ -14,6 +14,7 @@ export class ModalComponent implements OnInit, AfterViewInit  {
 
   @HostBinding('class.render') render: boolean = false;
   @HostBinding('class.transparent') transparent: boolean = true;
+  @HostBinding('attr.data-modal-id') currentModalId: string | null = null;
 
   @Input("transition-speed") speed: number = 250;
   @Input("background") background: string = "rgba(255,255,255,0.25)";
@@ -90,6 +91,7 @@ export class ModalComponent implements OnInit, AfterViewInit  {
   }
 
   private renderModal(modalData: ModalData) {
+    this.currentModalId = modalData.id;
     this.render = true;
     this.data = modalData;
     this.launcher = document.activeElement;
@@ -115,6 +117,7 @@ export class ModalComponent implements OnInit, AfterViewInit  {
   }
 
   private hideModal() {
+
     this.transparent = true;
     this.viewInitialized = false;
     this.element.nativeElement.onkeyup = null;
@@ -126,6 +129,7 @@ export class ModalComponent implements OnInit, AfterViewInit  {
     this.timeout = window.setTimeout(() => {
       this.render = false;
       this.data = null;
+      this.currentModalId = null;
     }, this.speed);
   }
 
